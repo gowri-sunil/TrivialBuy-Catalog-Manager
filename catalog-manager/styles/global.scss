@@ -1,0 +1,735 @@
+// @import "~antd/dist/antd.css";
+// @import "~react-responsive-carousel/lib/styles/carousel.min.css";
+// @import "../node_modules/react-image-gallery/styles/scss/image-gallery.scss";
+// @import "./vars.scss";
+// @import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
+// html,
+// body {
+// 	padding: 0;
+// 	margin: 0;
+// 	font-family: "Lato", sans-serif;
+
+// 	overflow-x: hidden;
+// }
+
+// .full-flex {
+// 	flex: 1;
+// }
+
+// a {
+// 	color: inherit;
+// 	text-decoration: none;
+// }
+
+// a:hover {
+// 	color: inherit !important;
+// }
+
+// * {
+// 	box-sizing: border-box;
+// }
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+// 	font-weight: $PRIMARY_BOLD;
+// }
+
+// h6 {
+// 	font-size: $FOR_FORT_14;
+// }
+
+// h3 {
+// 	font-size: $FOR_FORT_20;
+// }
+
+// h4 {
+// 	font-size: $FOR_FORT_18;
+// }
+
+// p {
+// 	margin-bottom: 0;
+// }
+
+// h1 {
+// 	font-size: $FOR_FORT_32;
+// 	margin-bottom: 5px;
+// }
+
+// .mandatory_asterisk {
+// 	color: $SECONDARY_COLOR;
+// 	// vertical-align: super;
+// }
+
+// // loading
+
+// .loading_shade {
+// 	top: 0;
+// 	left: 0;
+// 	position: absolute;
+// 	// position: relative;
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	height: 100vh;
+// 	width: 100vw;
+// 	z-index: 999999999;
+// 	transition-duration: $TRANSITION_SPEED;
+// 	background-color: $LOW_OPACITY_BG;
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	// pointer-events: none;
+// }
+
+// .loading_shade_spin_container {
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// 	height: 100px;
+// 	width: 100px;
+// 	border-radius: 100px;
+// 	background-color: $TEXT_EXTRALIGHT;
+// 	box-shadow: 0px 0px 50px $LOW_OPACITY_BG_2;
+// }
+
+// // buttons
+// .trivial-primary-button.full {
+// 	width: 100%;
+// }
+
+// .trivial-primary-button-with-image {
+// 	cursor: pointer;
+// 	border: none;
+// 	flex-shrink: 0;
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// 	font-size: $FOR_FORT_16;
+// 	font-weight: $PRIMARY_BOLD;
+// 	padding: 5px 25px;
+// 	border-radius: 5px;
+// 	color: white;
+// 	background-color: $PRIMARY_COLOR;
+// 	transition-duration: $TRANSITION_SPEED;
+// 	.bundlename_footer_cart {
+// 		height: 20px;
+// 		width: 20px;
+// 		margin-right: 8px;
+// 		background-repeat: no-repeat;
+// 		background-position: center;
+// 		background-size: 100% 100%;
+// 		background-image: url("../public/supermarket_white.png");
+// 	}
+// 	&:hover {
+// 		transform: scale(1.05, 1.05);
+// 		background-color: lighten($color: $PRIMARY_COLOR, $amount: 5);
+// 	}
+// 	&:focus {
+// 		transform: scale(1, 1);
+// 		outline: none;
+// 	}
+// 	&:active {
+// 		transform: scale(0.9, 0.9);
+// 		outline: none;
+// 	}
+// 	&:disabled {
+// 		cursor: not-allowed !important;
+// 		transform: scale(1, 1) !important;
+// 		color: $TEXT_LIGHT !important;
+// 		background-color: $TEXT_AVG !important;
+// 	}
+// }
+
+// .trivial-primary-button {
+// 	cursor: pointer;
+// 	border: none;
+// 	flex-shrink: 0;
+// 	// width: 100%;
+// 	font-size: $FOR_FORT_14;
+// 	font-weight: $PRIMARY_BOLD;
+// 	padding: 5px 25px;
+// 	border-radius: 5px;
+// 	color: $TEXT_EXTRALIGHT;
+// 	background-color: $PRIMARY_COLOR;
+// 	transition-duration: $TRANSITION_SPEED;
+
+// 	&:hover {
+// 		transform: scale(1.05, 1.05);
+// 		background-color: lighten($color: $PRIMARY_COLOR, $amount: 5);
+// 	}
+// 	&:focus {
+// 		transform: scale(1, 1);
+// 		outline: none;
+// 	}
+// 	&:active {
+// 		transform: scale(0.9, 0.9);
+// 		outline: none;
+// 	}
+// 	&:disabled {
+// 		cursor: not-allowed !important;
+// 		transform: scale(1, 1) !important;
+// 		color: $TEXT_LIGHT !important;
+// 		background-color: $TEXT_AVG !important;
+// 	}
+// }
+
+// .trivial-secondary-button {
+// 	cursor: pointer;
+// 	border: none;
+// 	// width: 100%;
+// 	font-size: $FOR_FORT_14;
+// 	font-weight: $PRIMARY_BOLD;
+// 	padding: 5px 25px;
+// 	border-radius: 5px;
+// 	color: $TEXT_DARK;
+// 	background-color: transparent;
+// 	transition-duration: $TRANSITION_SPEED;
+
+// 	&:hover {
+// 		transform: scale(1.05, 1.05);
+// 		background-color: $LIGHT_BACKGROUND;
+// 	}
+// 	&:focus {
+// 		transform: scale(1, 1);
+// 		background-color: $LIGHT_BACKGROUND;
+// 		outline: none;
+// 	}
+// 	&:active {
+// 		transform: scale(0.9, 0.9);
+// 		outline: none;
+// 	}
+// 	&:disabled {
+// 		cursor: not-allowed !important;
+// 		transform: scale(1, 1) !important;
+// 		color: $TEXT_AVG !important;
+// 		background-color: $TEXT_LIGHT !important;
+// 	}
+// }
+
+// .trivial-secondary-button.light {
+// 	color: white;
+// 	background-color: rgba(0, 0, 0, 0.25);
+// }
+
+// .trivial-ghost-button {
+// 	cursor: pointer;
+// 	// border: 1px solid $BORDER_COLOR_LIGHT;
+// 	border: none;
+// 	// width: 100%;
+// 	font-size: $FOR_FORT_14;
+// 	font-weight: $PRIMARY_MEDIUM;
+// 	padding: 4px 15px;
+// 	border-radius: 5px;
+// 	color: $TEXT_DARK;
+// 	background-color: $LIGHT_BACKGROUND;
+// 	transition-duration: $TRANSITION_SPEED;
+
+// 	&:hover {
+// 		color: $TEXT_EXTRALIGHT;
+// 		background-color: $TEXT_DARK;
+// 	}
+// 	&:focus {
+// 		color: $TEXT_EXTRALIGHT;
+// 		background-color: $TEXT_DARK;
+// 		outline: none;
+// 	}
+// 	&:active {
+// 		// transform: scale(0.9, 0.9);
+// 		outline: none;
+// 	}
+// }
+
+// .ant-popover-inner-content {
+// 	padding: 0 !important;
+// }
+
+// .ant-select-selector {
+// 	height: 100% !important;
+// 	border-radius: 5px;
+// }
+
+// .ant-modal-body {
+// 	.ant-modal-confirm-body-wrapper {
+// 		.ant-modal-confirm-body {
+// 			.ant-modal-confirm-title {
+// 				text-align: center !important;
+// 				font-size: $FOR_FORT_32;
+// 			}
+// 			.ant-modal-confirm-content {
+// 				text-align: center !important;
+// 				font-size: $FOR_FORT_18;
+// 			}
+// 		}
+// 		.ant-modal-confirm-btns {
+// 			display: flex !important;
+// 			flex-direction: column-reverse !important;
+// 			justify-content: center !important;
+// 			align-items: center !important;
+// 			width: 100%;
+
+// 			.ant-btn {
+// 				border: none !important;
+// 				font-size: $FOR_FORT_18;
+// 			}
+// 		}
+// 	}
+// }
+
+// .ant-checkbox-checked .ant-checkbox-inner {
+// 	background-color: $PRIMARY_COLOR;
+// 	border-color: $PRIMARY_COLOR;
+// }
+// .ant-tree-title {
+// 	font-weight: $PRIMARY_BOLD;
+// 	color: $TEXT_DARK;
+// 	font-size: $FOR_FORT_13;
+// 	// background-color: cyan;
+// 	white-space: nowrap;
+//   	overflow: hidden;
+// 	  display: block;
+//   	text-overflow: ellipsis;
+// 	// max-width: 300px !important;
+// 	width: 200px  !important;
+// }
+// .ant-checkbox:hover {
+// 	border-color: $PRIMARY_COLOR !important;
+// }
+
+// .ant-switch-checked {
+// 	background-color: $GREEN;
+// }
+
+// .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+// 	color: $PRIMARY_COLOR;
+// 	font-size: $FOR_FORT_15;
+// }
+
+// .ant-tabs-tab-btn {
+// 	text-transform: capitalize;
+// 	font-size: $FOR_FORT_15;
+// 	color: $TEXT_DARK;
+// }
+
+// .ant-tabs-tab {
+// 	font-size: $FOR_FORT_18;
+// 	&:hover {
+// 		color: $PRIMARY_COLOR;
+// 	}
+// }
+
+// .ant-tabs-tab-btn {
+// 	&:active {
+// 		color: $PRIMARY_COLOR;
+// 	}
+// }
+
+// .ant-tabs-ink-bar {
+// 	background-color: $PRIMARY_COLOR;
+// }
+// .ant-input-group-addon {
+// 	padding: 0 5px !important;
+// 	border: none;
+// }
+// .ant-btn:hover,
+// .ant-btn:focus {
+// 	color: $TEXT_EXTRALIGHT;
+// 	border-color: $PRIMARY_COLOR;
+// 	background-color: #ff8c00;
+// }
+// .ant-btn-primary {
+// 	background-color: $PRIMARY_COLOR;
+// 	border-color: $PRIMARY_COLOR;
+// 	padding: 0px 49px;
+// 	font-size: $FOR_FORT_14;
+// 	font-weight: $PRIMARY_REGULAR;
+// }
+// .ant-tree-list-holder-inner {
+// 	position: relative;
+// }
+
+// .ant-tree .ant-tree-node-content-wrapper .ant-tree-iconEle {
+// 	width: auto !important;
+// 	height: auto !important;
+// 	position: absolute;
+// 	right: 20px;
+// 	margin-top: 2px;
+// 	// margin-left: 60%;
+// }
+// // .ant-tree-list-holder-inner{
+// //   overflow: auto;
+// //   min-height: 100vh;
+// // }
+// .ant-tree .ant-tree-node-content-wrapper {
+// 	max-width: 130px;
+// 	text-overflow: ellipsis;
+// 	overflow: hidden;
+// }
+// .ant-collapse > .ant-collapse-item > .ant-collapse-header {
+// 	background-color: $TEXT_EXTRALIGHT;
+// }
+// .ant-tree .ant-tree-treenode {
+// 	// margin-bottom: 8px;
+// 	max-width: 380px !important;
+// }
+// .ant-tree ant-tree-show-line {
+// 	max-width: 380px !important;
+// }
+// .ant-collapse {
+// 	width: 100%;
+// 	border: none;
+// }
+// .ant-tabs-nav{
+// 	margin-bottom: 0px;
+// }
+// .ant-collapse > .ant-collapse-item:last-child,
+// .ant-collapse > .ant-collapse-item:last-child > .ant-collapse-header {
+// 	border: none;
+// 	// padding: 0px;
+// }
+// .site-collapse-custom-collapse{
+// 	padding-bottom: 5px;
+// 	border-bottom: 1px black solid;
+// }
+
+// .ant-collapse-content {
+// 	border: none;
+// }
+// .ant-collapse-header {
+// 	font-weight: $PRIMARY_BOLD;
+// 	word-break: break-all;
+// }
+
+// .ant-checkbox-wrapper + .ant-checkbox-wrapper {
+// 	margin: 0;
+// }
+
+// // collapse
+
+// .sidebar-panel-heading .ant-collapse-header {
+// 	padding-top: 0 !important;
+// 	padding-bottom: 10px !important;
+// 	font-size: $FOR_FORT_16;
+// 	padding-left: 16px !important;
+// }
+
+// .checkboxEntry {
+// 	font-size: $FOR_FORT_16;
+// 	word-break: break-all;
+// }
+
+// .ant-collapse > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow svg {
+// 	margin-top: -8px !important;
+// }
+
+// // the main ancestor class for the sidebar in supplier section
+// // useful for the below arrangement
+// // left: <SIDEBAR>
+// // right: <CONTENT>
+
+// .page-filters-container {
+// 	display: flex;
+// 	flex-direction: row;
+// 	min-height: calc(100vh - 144px);
+// 	// background-color: yellow;
+// }
+
+// .pricing-container {
+// 	padding: 20px;
+// }
+
+// // sort bar
+// .trivial-sort-option {
+// 	margin: 0 10px !important;
+// }
+
+// // toggle placement for the supplier section
+// .supplier-toggle {
+// 	float: right;
+// }
+
+// .dv-star-rating {
+// 	.dv-star-rating-star {
+// 		font-size: $FOR_FORT_20;
+// 		margin-bottom: 0;
+// 		line-height: 1;
+// 	}
+// }
+
+// // order dispute red row
+// .dispute_product_row {
+// 	background-color: transparentize($color: red, $amount: 0.9) !important;
+// }
+
+// .ant-radio-checked .ant-radio-inner {
+// 	border-color: $PRIMARY_COLOR !important;
+// }
+// .ant-radio-inner::after {
+// 	background-color: #ff8c00 !important;
+// 	border-color: $PRIMARY_COLOR !important;
+// }
+// .ant-radio-wrapper:hover .ant-radio,
+// .ant-radio:hover .ant-radio-inner,
+// .ant-radio-input:focus + .ant-radio-inner {
+// 	border-color: $PRIMARY_COLOR !important;
+// }
+
+// .formField.compact {
+// 	.ant-form-item {
+// 		margin-bottom: 0 !important;
+// 	}
+// }
+// .formField {
+// 	.ant-select-selection-item {
+// 		display: none !important;
+// 	}
+// 	.ant-input-group-addon {
+// 		padding: 5px 15px !important;
+// 		background: $BORDER_COLOR_LIGHT !important;
+// 	}
+// }
+// .ant-switch-checked .ant-switch-handle::before {
+// 	background-color: $GREEN;
+// }
+// .ant-switch-handle::before {
+// 	background-color: $SWITCH_HANDLE;
+// }
+// .ant-switch-checked {
+// 	background-color: $CHECKED_SWITCHED;
+// }
+// .ant-input-search-icon::before {
+// 	position: unset;
+// }
+// .global input[type="checkbox"] {
+// 	-webkit-appearance: initial;
+// 	appearance: initial;
+// 	background: $SMOKE_BACKGROUND;
+// 	width: 11px;
+// 	height: 11px;
+// 	border: none;
+// 	position: relative;
+// 	border-radius: 2px;
+// }
+// .global input[type="checkbox"]:checked {
+// 	background: $PRIMARY_COLOR;
+// }
+// .clientLandingPickoutSelection_stars__1B0Eq
+// 	.dv-star-rating
+// 	.dv-star-rating-star {
+// 	font-size: $FOR_FORT_30;
+// }
+
+// .ant-table-thead .ant-table-cell {
+// 	font-weight: $PRIMARY_BOLD;
+// }
+
+// .select-after
+// 	.ant-select-single.ant-select-show-arrow
+// 	.ant-select-selection-item {
+// 	display: block !important;
+// }
+
+// .ant-select-single.ant-select-show-arrow .ant-select-selection-item {
+// 	padding-right: 18px;
+// 	align-items: center;
+// 	display: flex;
+// }
+// .ant-table-cell {
+// 	white-space: nowrap;
+// }
+// .ant-popover-arrow {
+// 	display: none;
+// }
+
+// .ant-popover {
+// 	padding-right: 40px;
+// 	padding-top: 20px;
+// 	padding-left:10px;
+// }
+// .ant-divider {
+// 	margin: 13px 0;
+// }
+
+// // ant select overrides
+
+// .formField.client-setup-category-selection .ant-select-selector:after {
+// 	// content: "Choose Categories that can be Visible" !important;
+// 	color: $TEXT_AVG;
+// 	width: auto;
+// }
+
+// .client-setup-roles-selection {
+// 	margin-left: 20px;
+// 	display: flex;
+// 	flex: 1;
+// }
+
+// .role_popup_row_input {
+// 	width: 100%;
+// }
+
+// // .client-setup-roles-selection .ant-select-selector:after {
+// // 	content: "Role" !important;
+// // 	color: $TEXT_AVG;
+// // 	width: auto;
+// // }
+
+// .client-setup-roles-selection .ant-select-selection-item {
+// 	// display: none !important;
+// }
+
+// .formField.client-setup-product-selection .ant-select-selector:after {
+// 	// content: "Choose Products" !important;
+// 	color: $TEXT_AVG;
+// 	width: auto;
+// }
+
+// .no-border-input .ant-input-number {
+// 	border: none !important;
+// }
+
+// .no-border-input .ant-input-number-disabled {
+// 	background: none !important;
+// }
+
+// .hierarchy_org_table {
+// 	table {
+// 		border-collapse: collapse;
+// 		width: 100%;
+// 	}
+// 	th,
+// 	td {
+// 		padding: 8px;
+// 		text-align: left;
+// 		text-align: center;
+// 		height: 50px;
+// 	}
+
+// 	td.no-td-border {
+// 		border: none !important;
+// 	}
+
+// 	td {
+// 		border: 1px solid $DARK_BORDER;
+// 	}
+
+// 	input {
+// 		border: none;
+// 		width: 100%;
+// 	}
+// 	input:focus {
+// 		outline: none;
+// 	}
+// 	select {
+// 		border: none;
+// 		width: 100%;
+// 	}
+// 	select:focus {
+// 		outline: none;
+// 	}
+// }
+// .main_upload {
+// 	padding: 0px;
+// 	display: flex;
+// 	justify-content: center;
+// 	.ant-upload.ant-upload-select.ant-upload-select-text {
+// 		height: auto !important;
+// 	}
+// }
+// .attributeWrapper input.ant-input {
+// 	border-right: none;
+// }
+
+// .custom-ant-upload-btn {
+// 	height: 34px !important;
+// 	border-radius: 40px !important;
+// 	border: 1px solid $BORDER_COLOR_LIGHT !important;
+// 	.ant-upload-btn {
+// 		padding: 0 15px !important;
+// 	}
+// }
+
+// .ant-card-body {
+// 	padding: 15px;
+// }
+
+// input[type="number"]::-webkit-inner-spin-button,
+// input[type="number"]::-webkit-outer-spin-button {
+// 	-webkit-appearance: none;
+// 	margin: 0;
+// }
+// .reviewStarWrapper label {
+// 	font-size: 45px !important;
+// }
+
+// .ant-popover-inner {
+// 	border-radius: 10px;
+// }
+// .authorizedBuyer .ant-select-selector:after {
+// 	display: flex;
+// 	flex-direction: row !important;
+// 	justify-content: flex-start !important;
+// 	// content: "Select Authorized Buyer" !important;
+// 	padding-right: 30px;
+// 	color: rgba(128, 128, 128, 0.6);
+// 	width: auto !important;
+// }
+// .customDropdown {
+// 	height: 40px;
+// 	.ant-select-selector {
+// 		border-radius: 5px;
+// 	}
+// }
+// .ant-tree-node-content-wrapper ant-tree-node-content-wrapper-close{
+// 	width :200px !important;
+// }
+// .ant-tree {
+// 	.ant-tree-treenode {
+// 		width: 450px !important;
+// 		// max-width: 65%;
+// 		.ant-tree-node-content-wrapper {
+// 			width: 100% !important;
+// 			max-width: 100% !important;
+// 			height: 30px !important;
+// 		}
+// 	}
+// }
+// .anticon-check {
+// 	color: $PRIMARY_COLOR;
+// }
+// .ant-upload.ant-upload-drag .ant-upload-drag-container {
+// 	white-space: nowrap !important;
+// }
+// .registeruser_row__3DQeS {
+// 	.ant-form-item-children-icon {
+// 		display: none !important;
+// 	}
+// 	.ant-form-item-has-feedback .ant-input-affix-wrapper .ant-input-suffix {
+// 		padding-right: 0 !important;
+// 	}
+// }
+
+// .ant-dropdown-menu-submenu-popup ul{
+// 	margin: 0 !important;
+// }
+
+// .Toastify__toast-body {
+// 	text-transform: capitalize;
+// }
+// .ant-dropdown-menu{
+// 	padding:0 0 !important;
+// }
+
+// .ant-dropdown-menu-submenu-popup > .ant-dropdown-menu{
+// 	left: -4px !important;
+// }
+
+// .tabhide {
+// 	.ant-tabs-nav{
+// 			display: none !important;
+// 		}
+// }
